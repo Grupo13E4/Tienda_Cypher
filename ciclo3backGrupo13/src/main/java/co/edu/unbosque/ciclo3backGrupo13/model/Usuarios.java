@@ -2,8 +2,10 @@ package co.edu.unbosque.ciclo3backGrupo13.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity // Indicado que esta clase comportara como una entidad dentro de la base de datos
+@Table(name = "usuarios")
 public class Usuarios {
 	
 	@Id // Indicar a java que el campo que esta debajo es una llave principal (PK)
@@ -13,7 +15,19 @@ public class Usuarios {
 	private String usuario;
 	private String password;
 	
+	public Usuarios() {
+		super();
+	}
 	
+	public Usuarios(long cedula_usuario, String nombre_usuario, String email_usuario, String usuario, String password) {
+		super();
+		this.cedula_usuario = cedula_usuario;
+		this.nombre_usuario = nombre_usuario;
+		this.email_usuario = email_usuario;
+		this.usuario = usuario;
+		this.password = password;
+	}
+
 	public long getCedula_usuario() {
 		return cedula_usuario;
 	}

@@ -29,23 +29,23 @@
 						<div class="form-group">
 							<input type="hidden" name="menu" value="Usuarios"> 
 							<label>Cedula:</label>
-							<input type="text" name="txtcedula" class="form-control">
+							<input type="text" name="txtcedula" class="form-control" value="${usuarioSeleccionado.getCedula_usuario()}">
 						</div>
 						<div class="form-group">
 							<label>Nombre:</label> 
-							<input type="text" name="txtnombre" class="form-control">
+							<input type="text" name="txtnombre" class="form-control" value="${usuarioSeleccionado.getNombre_usuario()}">
 						</div>
 						<div class="form-group">
 							<label>Email:</label> 
-							<input type="text" name="txtemail" class="form-control">
+							<input type="text" name="txtemail" class="form-control" value="${usuarioSeleccionado.getEmail_usuario()}">
 						</div>
 						<div class="form-group">
 							<label>Usuario:</label> 
-							<input type="text" name="txtusuario" class="form-control">
+							<input type="text" name="txtusuario" class="form-control" value="${usuarioSeleccionado.getUsuario()}">
 						</div>
 						<div class="form-group">
 							<label>Password:</label> 
-							<input type="password" name="txtpassword" class="form-control">
+							<input type="password" name="txtpassword" class="form-control" value="${usuarioSeleccionado.getPassword()}">
 						</div>
 
 						<input type="submit" class="btn btn-primary" name="accion" value="Agregar"> 
@@ -86,5 +86,6 @@
 			</table>
 		</div>
 	</div>
+	
 </body>
 </html>
