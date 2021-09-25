@@ -26,7 +26,7 @@
 					<div class = "form-group text-center">
 						<h3 class="animated infinite bounce">Inicie Sesión</h3>
 						<img src="img/icon.jpg" class="icon" alt="70" width="80"/>
-						<label>Bienvenidos al Sistema</label>
+						<label>Bienvenidos al Sistema :)</label>
 					</div>
 					<div class = "form-group">
 						
