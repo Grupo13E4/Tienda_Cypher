@@ -4,7 +4,13 @@
 <html>
 <head>
 	<meta charset="ISO-8859-1">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+	
+	<!-- Links para el funcionamiento del boton de ocultar contraseña(los primero 3) -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" 
+	integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 	<link rel="stylesheet" href="CssIndex.css">
 	<link rel="icon" href="img/icon.jpg" type="image/x-icon">
@@ -26,10 +32,47 @@
 						
 						<input type="text" name="txtusuario" class="form form-control mt-4 text-light" placeholder="Usuario">					
 					</div>
-					<div class = "form-group">
 					
-						<input type="password" name="txtpassword" class="form form-control mt-4 text-light" placeholder="Password">	
-					</div>
+					<!-- <div class = "form-group">
+						<input type="password" name="txtpassword" class="form form-control mt-4 text-light" 
+						placeholder="Password">	
+						</div> -->
+						
+						<form id="form1">
+						<div class="form-group">
+						    <div class="row">
+						  <div>
+
+						     <div class="input-group">
+						      	<input ID="txtpassword" name="txtpassword" type="password" 
+						     	 Class="form form-control mt-4 text-light" placeholder="Password" >
+						      	<button style="color: #fff" id="show_password" 
+						     	class="btn btn-primary btn-lm mt-4 input-group-append" type="button"
+						     	onclick="mostrarPassword()"> <span class="fa fa-eye-slash icon"></span> </button>
+						    </div>
+						    
+						    	<!-- Funionamiento del Boton para mostrar u ocultar contraseña -->
+						    	
+							    	<script type="text/javascript">
+										function mostrarPassword(){
+												var cambio = document.getElementById("txtpassword");
+												if(cambio.type == "password"){
+													cambio.type = "text";
+													$('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+												}else{
+													cambio.type = "password";
+													$('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+												}
+											} 
+											
+											$(document).ready(function () {
+											//CheckBox mostrar contraseña
+											$('#Showpassword').click(function () {
+												$('#password').attr('type', $(this).is(':checked') ? 'text' : 'password');
+											});
+										});
+										</script>										
+						
 					<div>
 						<input type="submit" name="accion" value="Ingresar" class="btn btn-primary btn-lm mt-4">
 						<a class="btn btn-primary btn-lm mt-4" href="Home.jsp" role="button">Cancelar</a>

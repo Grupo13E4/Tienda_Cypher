@@ -6,26 +6,27 @@
 	<meta charset="ISO-8859-1">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-	<link rel="stylesheet" href="CssIndex.css">
+	<link rel="stylesheet" href="cssPrincipal.css">
 	<link rel="icon" href="img/icon.jpg" type="image/x-icon">
 	<title>Inicio Cypher</title>
 </head>
 <body>
 	<!--Inicio Banner-->
-   	        <div class = "banner">
+	<div class = "banner">
                 <h1>TIENDA HIGH TECH CYPHER</h1>
             </div>
     <!--Fin Banner-->
 	
 	<!-- Inicio Login -->
 	<div class = "container col-lg-8">
-		<h4>PERIFERICOS DE ALTA GAMA</h4>
-		<div>
-			<a class="btn btn-primary btn-lm mt-4" href="inicio.jsp" role="button">Inicie Sesión</a>			
+		
+		<div class="logo">
+			<h4>PERIFERICOS DE ALTA GAMA</h4>
+			<img src="img/icon.jpg" class="icon" alt="70" width="80"/>			
 		</div>	
 			
 	
-<!--Fin Slider Carrousel-->
+<!--inicio Slider Carrousel-->
 		<div id="carouselExampleCaptions" class="carousel slide mb-4 mt-4" data-bs-ride="carousel">
 		  <div class="carousel-indicators">
 		    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -111,6 +112,8 @@
 		</section>
 	</footer>
 	<!-- Fin Footer -->
+
+
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
 </body>

@@ -1,0 +1,8 @@
+127.0.0.1 - - [25/Sep/2021:14:21:07 -0500] "GET / HTTP/1.1" 404 687
+0:0:0:0:0:0:0:1 - - [25/Sep/2021:14:21:11 -0500] "GET /Ciclo3demo/inicio.jsp HTTP/1.1" 200 3427
+0:0:0:0:0:0:0:1 - - [25/Sep/2021:14:21:11 -0500] "GET /Ciclo3demo/CssIndex.css HTTP/1.1" 200 3331
+0:0:0:0:0:0:0:1 - - [25/Sep/2021:14:21:11 -0500] "GET /Ciclo3demo/img/icon.jpg HTTP/1.1" 200 14955
+0:0:0:0:0:0:0:1 - - [25/Sep/2021:14:21:11 -0500] "GET /Ciclo3demo/img/wallpaper1.jpg HTTP/1.1" 200 40418
+0:0:0:0:0:0:0:1 - - [25/Sep/2021:14:21:27 -0500] "GET /Ciclo3demo/inicio.jsp HTTP/1.1" 200 3427
+0:0:0:0:0:0:0:1 - - [25/Sep/2021:14:21:27 -0500] "GET /Ciclo3demo/CssIndex.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [25/Sep/2021:14:21:34 -0500] "GET /Ciclo3demo/DemoServlet?txtusuario=admin&txtpassword=123&accion=Ingresar HTTP/1.1" 200 3427

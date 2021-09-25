@@ -18,7 +18,7 @@
 </head>
 <body>
 	<div class="row">
-		<div class="ingresar card col-md-4">
+		<div class="ingresar card col-md-3">
 			<div class="card-body">
 				<h4 class="card-title" style="color: white;">Usuarios</h4>
 				<h6>En este panel podras
@@ -29,32 +29,37 @@
 						<div class="form-group">
 							<input type="hidden" name="menu" value="Usuarios"> 
 							<label>Cedula:</label>
-							<input type="text" name="txtcedula" class="form-control" value="${usuarioSeleccionado.getCedula_usuario()}">
+							<input type="text" name="txtcedula" class="form-control" 
+							value="${usuarioSeleccionado.getCedula_usuario()}">
 						</div>
 						<div class="form-group">
 							<label>Nombre:</label> 
-							<input type="text" name="txtnombre" class="form-control" value="${usuarioSeleccionado.getNombre_usuario()}">
+							<input type="text" name="txtnombre" class="form-control" 
+							value="${usuarioSeleccionado.getNombre_usuario()}">
 						</div>
 						<div class="form-group">
 							<label>Email:</label> 
-							<input type="text" name="txtemail" class="form-control" value="${usuarioSeleccionado.getEmail_usuario()}">
+							<input type="text" name="txtemail" class="form-control" 
+							value="${usuarioSeleccionado.getEmail_usuario()}">
 						</div>
 						<div class="form-group">
 							<label>Usuario:</label> 
-							<input type="text" name="txtusuario" class="form-control" value="${usuarioSeleccionado.getUsuario()}">
+							<input type="text" name="txtusuario" class="form-control" 
+							value="${usuarioSeleccionado.getUsuario()}">
 						</div>
 						<div class="form-group">
 							<label>Password:</label> 
-							<input type="password" name="txtpassword" class="form-control" value="${usuarioSeleccionado.getPassword()}">
+							<input type="password" name="txtpassword" class="form-control" 
+							value="${usuarioSeleccionado.getPassword()}">
 						</div>
 
-						<input type="submit" class="btn btn-primary" name="accion" value="Agregar"> 
-						<input type="submit" class="btn btn-success" name="accion" value="Actualizar">
+						<input type="submit" class="btn btn-outline-primary mt-2" name="accion" value="Agregar"> 
+						<input type="submit" class="btn btn-outline-success mt-2" name="accion" value="Actualizar">
 					</form>
 				</div>
 			</div>
 		</div>
-		<div class="lista col-md-8">
+		<div class="lista col-md-9">
 			<table class="table">
 				<thead class="thead-dark">
 					<tr>
@@ -75,9 +80,9 @@
 						<td><%=usuario.getEmail_usuario()%></td>
 						<td><%=usuario.getUsuario()%></td>
 						<td><%=usuario.getPassword()%></td>
-						<td><a class="btn btn-warning m-2"
+						<td><a class="btn btn-outline-warning m-2"
 							href="Controlador?menu=Usuarios&accion=Cargar&id=<%=usuario.getCedula_usuario()%>">Editar</a>
-							<a class="btn btn-danger m-2"
+							<a class="btn btn-outline-danger m-2"
 							href="Controlador?menu=Usuarios&accion=Eliminar&id=<%=usuario.getCedula_usuario()%>">Eliminar</a>
 						</td>
 					</tr>
