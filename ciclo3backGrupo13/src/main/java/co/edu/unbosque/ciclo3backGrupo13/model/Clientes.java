@@ -9,7 +9,7 @@ import javax.persistence.Table;
 public class Clientes {
 	
 	@Id // Indicar a java que el campo que esta debajo es una llave principal (PK)
-	private long cedula_cliente;	
+	private Long cedula_cliente;	
 	private String nombre_cliente;
 	private String email_cliente;
 	private String direccion_cliente;
@@ -19,7 +19,7 @@ public class Clientes {
 		super();
 	}
 
-	public Clientes(long cedula_cliente, String nombre_cliente, String email_cliente, String direccion_cliente,
+	public Clientes(Long cedula_cliente, String nombre_cliente, String email_cliente, String direccion_cliente,
 			String telefono_cliente) {
 		super();
 		this.cedula_cliente = cedula_cliente;
@@ -29,11 +29,11 @@ public class Clientes {
 		this.telefono_cliente = telefono_cliente;
 	}
 
-	public long getCedula_cliente() {
+	public Long getCedula_cliente() {
 		return cedula_cliente;
 	}
 
-	public void setCedula_cliente(long cedula_cliente) {
+	public void setCedula_cliente(Long cedula_cliente) {
 		this.cedula_cliente = cedula_cliente;
 	}
 

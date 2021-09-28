@@ -29,23 +29,28 @@
 						<div class="form-group">
 							<input type="hidden" name="menu" value="Clientes"> 
 							<label>Cedula:</label>
-							<input type="text" name="txtcedula" class="form-control" value="${clienteSeleccionado.getCedula_cliente()}">
+							<input type="text" name="txtcedula" class="form-control" 
+							value="${clienteSeleccionado.getCedula_cliente()}">
 						</div>
 						<div class="form-group">
 							<label>Nombre:</label> 
-							<input type="text" name="txtnombre" class="form-control" value="${clienteSeleccionado.getNombre_cliente()}">
+							<input type="text" name="txtnombre" class="form-control" 
+							value="${clienteSeleccionado.getNombre_cliente()}">
 						</div>
 						<div class="form-group">
 							<label>Email:</label> 
-							<input type="text" name="txtemail" class="form-control" value="${clienteSeleccionado.getEmail_cliente()}">
+							<input type="text" name="txtemail" class="form-control" 
+							value="${clienteSeleccionado.getEmail_cliente()}">
 						</div>
 						<div class="form-group">
 							<label>Usuario:</label> 
-							<input type="text" name="txtdireccion" class="form-control" value="${clienteSeleccionado.getDireccion_cliente()}">
+							<input type="text" name="txtdireccion" class="form-control" 
+							value="${clienteSeleccionado.getDireccion_cliente()}">
 						</div>
 						<div class="form-group">
 							<label>Password:</label> 
-							<input type="password" name="txttelefono" class="form-control" value="${clienteSeleccionado.getTelefono_cliente()}">
+							<input type="password" name="txttelefono" class="form-control" 
+							value="${clienteSeleccionado.getTelefono_cliente()}">
 						</div>
 
 						<input type="submit" class="btn btn-primary" name="accion" value="Agregar"> 

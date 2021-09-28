@@ -18,7 +18,7 @@
     <!--Fin Banner-->
 	
 	<!-- Inicio Login -->
-	<div class = "container col-lg-8">
+	<div class = "container col-lg-6">
 		
 		<div class="logo">
 			<h4>PERIFERICOS DE ALTA GAMA</h4>

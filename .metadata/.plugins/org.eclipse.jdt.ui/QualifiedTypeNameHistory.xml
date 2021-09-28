@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="javax.persistence.Table"/>
+    <fullyQualifiedTypeName name="javax.persistence.Entity"/>
+    <fullyQualifiedTypeName name="javax.persistence.Id"/>
+    <fullyQualifiedTypeName name="co.edu.unbosque.ciclo3backGrupo13.model.Proveedor"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+    <fullyQualifiedTypeName name="co.edu.unbosque.ciclo3backGrupo13.dao.ProveedoresDAO"/>
+    <fullyQualifiedTypeName name="co.edu.unbosque.ciclo3backGrupo13.model.Proveedores"/>
 </qualifiedTypeNameHistroy>

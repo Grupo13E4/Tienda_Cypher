@@ -2,7 +2,7 @@ package co.edu.unbosque.ciclo3demo;
 
 public class Usuarios {
 	
-	private Long cedula_usuario;
+	private String cedula_usuario;
 	private String nombre_usuario;
 	private String email_usuario;
 	private String usuario;
@@ -13,7 +13,7 @@ public class Usuarios {
 		super();
 	}	
 	
-	public Usuarios(Long cedula_usuario, String nombre_usuario, String email_usuario, String usuario, String password) {
+	public Usuarios(String cedula_usuario, String nombre_usuario, String email_usuario, String usuario, String password) {
 		super();
 		this.cedula_usuario = cedula_usuario;
 		this.nombre_usuario = nombre_usuario;
@@ -22,10 +22,10 @@ public class Usuarios {
 		this.password = password;
 	}
 
-	public Long getCedula_usuario() {
+	public String getCedula_usuario() {
 		return cedula_usuario;
 	}
-	public void setCedula_usuario(Long cedula_usuario) {
+	public void setCedula_usuario(String cedula_usuario) {
 		this.cedula_usuario = cedula_usuario;
 	}
 	public String getNombre_usuario() {

@@ -2,7 +2,7 @@ package co.edu.unbosque.ciclo3demo;
 
 public class Clientes {
 	
-	private long cedula_cliente;	
+	private String cedula_cliente;	
 	private String nombre_cliente;
 	private String email_cliente;
 	private String direccion_cliente;
@@ -12,7 +12,7 @@ public class Clientes {
 		super();
 	}
 
-	public Clientes(long cedula_cliente, String nombre_cliente, String email_cliente, String direccion_cliente,
+	public Clientes(String cedula_cliente, String nombre_cliente, String email_cliente, String direccion_cliente,
 			String telefono_cliente) {
 		super();
 		this.cedula_cliente = cedula_cliente;
@@ -22,11 +22,11 @@ public class Clientes {
 		this.telefono_cliente = telefono_cliente;
 	}
 
-	public long getCedula_cliente() {
+	public String getCedula_cliente() {
 		return cedula_cliente;
 	}
 
-	public void setCedula_cliente(long cedula_cliente) {
+	public void setCedula_cliente(String cedula_cliente) {
 		this.cedula_cliente = cedula_cliente;
 	}
 

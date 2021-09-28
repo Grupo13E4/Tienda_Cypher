@@ -8,7 +8,7 @@ import javax.persistence.Table;
 public class Usuarios {
 	
 	@Id // Indicar a java que el campo que esta debajo es una llave principal (PK)
-	private long cedula_usuario;	
+	private Long cedula_usuario;	
 	private String nombre_usuario;
 	private String email_usuario;
 	private String usuario;
@@ -18,7 +18,7 @@ public class Usuarios {
 		super();
 	}
 	
-	public Usuarios(long cedula_usuario, String nombre_usuario, String email_usuario, String usuario, String password) {
+	public Usuarios(Long cedula_usuario, String nombre_usuario, String email_usuario, String usuario, String password) {
 		super();
 		this.cedula_usuario = cedula_usuario;
 		this.nombre_usuario = nombre_usuario;
@@ -30,7 +30,7 @@ public class Usuarios {
 	public long getCedula_usuario() {
 		return cedula_usuario;
 	}
-	public void setCedula_usuario(long cedula_usuario) {
+	public void setCedula_usuario(Long cedula_usuario) {
 		this.cedula_usuario = cedula_usuario;
 	}
 	public String getNombre_usuario() {

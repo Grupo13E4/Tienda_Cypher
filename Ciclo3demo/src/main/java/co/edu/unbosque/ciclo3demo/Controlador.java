@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/Controlador")
 //@WebServlet(name = "Controlador", urlPatterns = {"/Controlador"})
 public class Controlador extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+	private static final Long serialVersionUID = 1L;
 
 	public Controlador() {
 		super();
@@ -30,8 +30,8 @@ public class Controlador extends HttpServlet {
 		String accion = request.getParameter("accion");
 
 		switch (menu) {
-		case "Principal":
-			request.getRequestDispatcher("/Principal.jsp").forward(request, response);
+		case "Principal":			
+			request.getRequestDispatcher("/Home.jsp").forward(request, response);
 			break;
 		case "Usuarios":
 			if (accion.equals("Listar")) {
@@ -43,7 +43,7 @@ public class Controlador extends HttpServlet {
 				}
 			} else if (accion.equals("Agregar")) {
 				Usuarios usuario = new Usuarios();
-				usuario.setCedula_usuario(Long.parseLong(request.getParameter("txtcedula")));
+				usuario.setCedula_usuario(request.getParameter("txtcedula"));
 				usuario.setNombre_usuario(request.getParameter("txtnombre"));
 				usuario.setEmail_usuario(request.getParameter("txtemail"));
 				usuario.setUsuario(request.getParameter("txtusuario"));
@@ -65,7 +65,7 @@ public class Controlador extends HttpServlet {
 				}
 			} else if (accion.equals("Actualizar")) {
 				Usuarios usuario = new Usuarios();
-				usuario.setCedula_usuario(Long.parseLong(request.getParameter("txtcedula")));
+				usuario.setCedula_usuario(request.getParameter("txtcedula"));
 				usuario.setNombre_usuario(request.getParameter("txtnombre"));
 				usuario.setEmail_usuario(request.getParameter("txtemail"));
 				usuario.setUsuario(request.getParameter("txtusuario"));
@@ -73,7 +73,7 @@ public class Controlador extends HttpServlet {
 
 				int respuesta = 0;
 				try {
-					respuesta = TestJSON.putJSON(usuario, usuario.getCedula_usuario());
+					respuesta = TestJSON.putJSON(usuario, Long.parseLong(usuario.getCedula_usuario()));
 					PrintWriter write = response.getWriter();
 
 					if (respuesta == 200) {
@@ -87,12 +87,12 @@ public class Controlador extends HttpServlet {
 					e.printStackTrace();
 				}
 			} else if (accion.equals("Cargar")) {
-				Long id = Long.parseLong(request.getParameter("id"));
+				String id = request.getParameter("id");			
 				try {
 					ArrayList<Usuarios> lista1 = TestJSON.getJSON();
 					System.out.println("Parametro: " + id);
 					for (Usuarios usuarios : lista1) {
-						if (usuarios.getCedula_usuario() == id) {
+						if (usuarios.getCedula_usuario().equals(id)) {
 							request.setAttribute("usuarioSeleccionado", usuarios);
 							request.getRequestDispatcher("Controlador?menu=Usuarios&accion=Listar").forward(request,
 									response);
@@ -132,7 +132,7 @@ public class Controlador extends HttpServlet {
 				}
 			} else if (accion.equals("Agregar")) {
 				Clientes cliente = new Clientes();
-				cliente.setCedula_cliente(Long.parseLong(request.getParameter("txtcedula")));
+				cliente.setCedula_cliente(request.getParameter("txtcedula"));
 				cliente.setNombre_cliente(request.getParameter("txtnombre"));
 				cliente.setEmail_cliente(request.getParameter("txtemail"));
 				cliente.setDireccion_cliente(request.getParameter("txtdireccion"));
@@ -154,7 +154,7 @@ public class Controlador extends HttpServlet {
 				}
 			} else if (accion.equals("Actualizar")) {
 				Clientes cliente = new Clientes();
-				cliente.setCedula_cliente(Long.parseLong(request.getParameter("txtcedula")));
+				cliente.setCedula_cliente(request.getParameter("txtcedula"));
 				cliente.setNombre_cliente(request.getParameter("txtnombre"));
 				cliente.setEmail_cliente(request.getParameter("txtemail"));
 				cliente.setDireccion_cliente(request.getParameter("txtdireccion"));
@@ -162,7 +162,7 @@ public class Controlador extends HttpServlet {
 
 				int respuesta = 0;
 				try {
-					respuesta = TestJSONClientes.putJSON(cliente, cliente.getCedula_cliente());
+					respuesta = TestJSONClientes.putJSON(cliente, Long.parseLong(cliente.getCedula_cliente()));
 					PrintWriter write = response.getWriter();
 
 					if (respuesta == 200) {
@@ -176,7 +176,7 @@ public class Controlador extends HttpServlet {
 					e.printStackTrace();
 				}
 			} else if (accion.equals("Cargar")) {
-				Long id = Long.parseLong(request.getParameter("id"));
+				String id = request.getParameter("id");
 				try {
 					ArrayList<Clientes> lista1 = TestJSONClientes.getJSON();
 					System.out.println("Parametro: " + id);
