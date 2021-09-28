@@ -53,6 +53,12 @@
 							class="btn btn-outline-light" href="Controlador?menu=Ventas"
 							target="myFrame">Ventas</a>
 						</li>
+						<li class="nav-item">
+							<a
+							style="margin-left: 10px; border: none"
+							class="btn btn-outline-light" href="Controlador?menu=Ventas"
+							target="myFrame">Reportes</a>
+						</li>
 					</ul>
 				</div>
 			</div>
