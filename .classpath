@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path=".metadata/.plugins/org.eclipse.wst.server.core/tmp0/work/Catalina/localhost/Ciclo3demo"/>
+	<classpathentry kind="src" path="Ciclo3demo/src/main/java"/>
+	<classpathentry kind="src" path="ciclo3backGrupo13/src/main/java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11"/>
+	<classpathentry kind="src" path="ciclo3backGrupo13/src/test/java"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
