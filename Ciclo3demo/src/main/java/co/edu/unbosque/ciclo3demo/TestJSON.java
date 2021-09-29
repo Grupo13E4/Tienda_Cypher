@@ -92,7 +92,7 @@ public class TestJSON {
 		return respuesta;
 	}
 
-	public static int putJSON(Usuarios usuario, Long id) throws IOException {
+	public static int putJSON(Usuarios usuario, String id) throws IOException {
 
 		url = new URL(sitio + "usuarios/actualizar");
 		HttpURLConnection http;
