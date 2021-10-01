@@ -3,10 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 	<meta charset="ISO-8859-1">	
 	<!-- Links para el funcionamiento del boton de ocultar contraseña(los primero 3) -->
-
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -25,9 +23,9 @@
 			<div class = "card-body">
 				<form class="form-sign" method="get" action="./DemoServlet">
 					<div class = "form-group text-center">
-						<h3 class="animated infinite bounce">Inicie SesiÃ³n</h3>
+						<h3 class="animated infinite bounce">Inicie Sesión</h3>
 						<img src="img/icon.jpg" class="icon" alt="70" width="80"/>
-						<label>Bienvenidos al Sistema XD</label>
+						<label>Bienvenidos al Sistema</label>
 					</div>
 					<div class = "form-group">
 						
@@ -52,7 +50,7 @@
 						     	onclick="mostrarPassword()"> <span class="fa fa-eye-slash icon"></span> </button>
 						    </div>
 						    
-						    	<!-- Funionamiento del Boton para mostrar u ocultar contraseÃ±a -->
+						    	<!-- Funionamiento del Boton para mostrar u ocultar contraseña -->
 						    	
 							    	<script type="text/javascript">
 										function mostrarPassword(){
@@ -67,7 +65,7 @@
 											} 
 											
 											$(document).ready(function () {
-											//CheckBox mostrar contraseÃ±a
+											//CheckBox mostrar contraseña
 											$('#Showpassword').click(function () {
 												$('#password').attr('type', $(this).is(':checked') ? 'text' : 'password');
 											});

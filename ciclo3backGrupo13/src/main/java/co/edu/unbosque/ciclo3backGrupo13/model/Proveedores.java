@@ -2,22 +2,37 @@ package co.edu.unbosque.ciclo3backGrupo13.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="proveedores")
 public class Proveedores {
 	
 	@Id
-	private Long nitProveedor;
+	private long nitProveedor;
 	private String ciudad_proveedor;
 	private String nombre_proveedor;
 	private String telefono_proveedor;
 	private String direccion_proveedor;
 	
+	public Proveedores() {
+		super();
+	}
 	
-	public Long getNitProveedor() {
+	public Proveedores(long nitProveedor, String ciudad_proveedor, String nombre_proveedor, String telefono_proveedor,
+			String direccion_proveedor) {
+		super();
+		this.nitProveedor = nitProveedor;
+		this.ciudad_proveedor = ciudad_proveedor;
+		this.nombre_proveedor = nombre_proveedor;
+		this.telefono_proveedor = telefono_proveedor;
+		this.direccion_proveedor = direccion_proveedor;
+	}
+
+	public long getNitProveedor() {
 		return nitProveedor;
 	}
-	public void setNitProveedor(Long nitProveedor) {
+	public void setNitProveedor(long nitProveedor) {
 		this.nitProveedor = nitProveedor;
 	}
 	public String getCiudad_proveedor() {

@@ -18,7 +18,7 @@
 </head>
 <body>
 	<div class="row">
-		<div class="ingresar card col-md-4">
+		<div class="ingresar card col-md-3">
 			<div class="card-body">
 				<h4 class="card-title" style="color: white;">Clientes</h4>
 				<h6>En este panel podras
@@ -43,23 +43,23 @@
 							value="${clienteSeleccionado.getEmail_cliente()}">
 						</div>
 						<div class="form-group">
-							<label>Usuario:</label> 
+							<label>Dirección:</label> 
 							<input type="text" name="txtdireccion" class="form-control" 
 							value="${clienteSeleccionado.getDireccion_cliente()}">
 						</div>
 						<div class="form-group">
-							<label>Password:</label> 
-							<input type="password" name="txttelefono" class="form-control" 
+							<label>Teléfono:</label> 
+							<input type="text" name="txttelefono" class="form-control" 
 							value="${clienteSeleccionado.getTelefono_cliente()}">
 						</div>
 
-						<input type="submit" class="btn btn-primary" name="accion" value="Agregar"> 
-						<input type="submit" class="btn btn-success" name="accion" value="Actualizar">
+						<input type="submit" class="btn btn-primary mt-2" name="accion" value="Agregar"> 
+						<input type="submit" class="btn btn-success mt-2" name="accion" value="Actualizar">
 					</form>
 				</div>
 			</div>
 		</div>
-		<div class="lista col-md-8">
+		<div class="lista col-md-9">
 			<table class="table">
 				<thead class="thead-dark">
 					<tr>

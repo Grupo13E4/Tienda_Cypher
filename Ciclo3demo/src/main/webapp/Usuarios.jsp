@@ -53,8 +53,8 @@
 							value="${usuarioSeleccionado.getPassword()}">
 						</div>
 
-						<input type="submit" class="btn btn-outline-primary mt-2" name="accion" value="Agregar"> 
-						<input type="submit" class="btn btn-outline-success mt-2" name="accion" value="Actualizar">
+						<input type="submit" class="btn btn-primary mt-2" name="accion" value="Agregar"> 
+						<input type="submit" class="btn btn-success mt-2" name="accion" value="Actualizar">
 					</form>
 				</div>
 			</div>
@@ -80,9 +80,9 @@
 						<td><%=usuario.getEmail_usuario()%></td>
 						<td><%=usuario.getUsuario()%></td>
 						<td><%=usuario.getPassword()%></td>
-						<td><a class="btn btn-outline-warning m-2"
+						<td><a class="btn btn-warning m-2"
 							href="Controlador?menu=Usuarios&accion=Cargar&id=<%=usuario.getCedula_usuario()%>">Editar</a>
-							<a class="btn btn-outline-danger m-2"
+							<a class="btn btn-danger m-2"
 							href="Controlador?menu=Usuarios&accion=Eliminar&id=<%=usuario.getCedula_usuario()%>">Eliminar</a>
 						</td>
 					</tr>

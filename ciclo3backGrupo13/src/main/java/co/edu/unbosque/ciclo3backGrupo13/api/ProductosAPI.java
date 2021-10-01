@@ -15,7 +15,7 @@ import co.edu.unbosque.ciclo3backGrupo13.model.Productos;
 
 
 @RestController // Es la que representa el objeto tipo Rest
-@RequestMapping("Productos") // 
+@RequestMapping("productos") // 
 public class ProductosAPI {
 	
 	@Autowired // Inyecta la dependencia de todos los métodos del JPA a la variable usuarioDAO

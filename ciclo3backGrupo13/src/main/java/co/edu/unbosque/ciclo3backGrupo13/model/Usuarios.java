@@ -4,7 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
 @Entity // Indicado que esta clase comportara como una entidad dentro de la base de datos
+@Table(name="usuarios")
 public class Usuarios {
 	
 	@Id // Indicar a java que el campo que esta debajo es una llave principal (PK)

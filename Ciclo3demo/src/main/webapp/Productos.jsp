@@ -14,7 +14,7 @@
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="cssUsuarios.css">
 <link rel="icon" href="img/icon.jpg" type="image/x-icon">
-<title>Productos</title>
+<title>Creacion de Usuario</title>
 </head>
 <body>
 	<div class="row">
@@ -28,37 +28,38 @@
 
 						<div class="form-group">
 							<input type="hidden" name="menu" value="Productos"> 
-							<label>codigo de producto:</label>
-							<input type="text"placeholder="Ej. 4351621" name="txtcodigoproducto" class="form-control" 
+							<label>Código:</label>
+							<input type="text" name="txtcodigoproducto" class="form-control" 
 							value="${productoSeleccionado.getCodigo_producto()}">
 						</div>
 						<div class="form-group">
-							<label>iva compra:</label> 
-							<input type="text" placeholder="Ej. 25%"name="txtivacompra" class="form-control" 
+							<label>Iva Compra:</label> 
+							<input type="text" name="txtivacompra" class="form-control" 
 							value="${productoSeleccionado.getIvacompra()}">
 						</div>
-						<div class="form-grfoup">
-							<label>nitproveedor:</label> 
-							<input type="text" placeholder="Ej. 1007673123"name="txtnitproveedor" class="form-control" 
+						<div class="form-group">
+							<label>Nit Proveedor:</label> 
+							<input type="text" name="txtnitproveedor" class="form-control" 
 							value="${productoSeleccionado.getNitproveedor()}">
 						</div>
 						<div class="form-group">
-							<label>nombre del producto:</label> 
-							<input type="text" placeholder="Ej. empanadas"name="txtnombreproducto" class="form-control" 
+							<label>Nombre Producto:</label> 
+							<input type="text" name="txtnombreproducto" class="form-control" 
 							value="${productoSeleccionado.getNombre_producto()}">
 						</div>
 						<div class="form-group">
-							<label>precio de compra</label> 
-							<input type="text"placeholder="Ej. 1000" name="txtpreciocompra" class="form-control" 
+							<label>Precio Compra:</label> 
+							<input type="text" name="txtpreciocompra" class="form-control" 
 							value="${productoSeleccionado.getPrecio_compra()}">
 						</div>
 						<div class="form-group">
-							<label>precio de venta</label> 
-							<input type="text" placeholder="Ej. 1500"name="txtprecioventa" class="form-control" 
+							<label>Precio Venta:</label> 
+							<input type="text" name="txtprecioventa" class="form-control" 
 							value="${productoSeleccionado.getPrecio_venta()}">
 						</div>
-						<input type="submit" class="btn btn-outline-primary mt-2" name="accion" value="Agregar"> 
-						<input type="submit" class="btn btn-outline-success mt-2" name="accion" value="Actualizar">
+
+						<input type="submit" class="btn btn-primary mt-2" name="accion" value="Agregar"> 
+						<input type="submit" class="btn btn-success mt-2" name="accion" value="Actualizar">
 					</form>
 				</div>
 			</div>
@@ -67,17 +68,18 @@
 			<table class="table">
 				<thead class="thead-dark">
 					<tr>
-						<th scope="col">Codigo de producto</th>
-						<th scope="col">Iva compra</th>
-						<th scope="col">Nitproveedor</th>
-						<th scope="col">Nombre del producto</th>
-						<th scope="col">Precio de compra</th>
-						<th scope="col">Precio de venta</th>
+						<th scope="col">Código</th>
+						<th scope="col">Iva Compra</th>
+						<th scope="col">Nit Proveedor</th>
+						<th scope="col">Nombre Producto</th>
+						<th scope="col">Precio Compra</th>
+						<th scope="col">Precio Venta</th>
 					</tr>
 				</thead>
 				<tbody>
-					<% 	ArrayList<Productos> lista= (ArrayList<Productos>) request.getAttribute("lista");
-					for (Productos producto:lista){%>
+					<% ArrayList<Productos> lista= (ArrayList<Productos>) request.getAttribute("lista");
+			for (Productos producto:lista){
+			%>
 					<tr>
 						<td><%=producto.getCodigo_producto()%></td>
 						<td><%=producto.getIvacompra()%></td>
@@ -85,9 +87,9 @@
 						<td><%=producto.getNombre_producto()%></td>
 						<td><%=producto.getPrecio_compra()%></td>
 						<td><%=producto.getPrecio_venta()%></td>
-						<td><a class="btn btn-outline-warning m-2"
+						<td><a class="btn btn-warning m-2"
 							href="Controlador?menu=Productos&accion=Cargar&id=<%=producto.getCodigo_producto()%>">Editar</a>
-							<a class="btn btn-outline-danger m-2"
+							<a class="btn btn-danger m-2"
 							href="Controlador?menu=Productos&accion=Eliminar&id=<%=producto.getCodigo_producto()%>">Eliminar</a>
 						</td>
 					</tr>

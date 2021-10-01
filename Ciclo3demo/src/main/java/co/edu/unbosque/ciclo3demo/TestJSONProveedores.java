@@ -16,10 +16,10 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 public class TestJSONProveedores {
-	
+
 	private static URL url;
 	private static String sitio = "http://localhost:5000/";
-	
+
 	public static ArrayList<Proveedores> parsingProveedores(String json) throws ParseException {
 		JSONParser jsonParser = new JSONParser();
 		ArrayList<Proveedores> lista = new ArrayList<Proveedores>();
@@ -28,7 +28,7 @@ public class TestJSONProveedores {
 		while (i.hasNext()) {
 			JSONObject innerObj = (JSONObject) i.next();
 			Proveedores proveedor = new Proveedores();
-			proveedor.setNitProveedor(innerObj.get("nit_Proveedor").toString());
+			proveedor.setNitproveedor(innerObj.get("nitproveedor").toString());
 			proveedor.setCiudad_proveedor(innerObj.get("ciudad_proveedor").toString());
 			proveedor.setDireccion_proveedor(innerObj.get("direccion_proveedor").toString());
 			proveedor.setNombre_proveedor(innerObj.get("nombre_proveedor").toString());
@@ -38,7 +38,7 @@ public class TestJSONProveedores {
 		}
 		return lista;
 	}
-	
+
 	public static ArrayList<Proveedores> getJSON() throws IOException, ParseException {
 
 		url = new URL(sitio + "proveedores/listar");
@@ -60,7 +60,7 @@ public class TestJSONProveedores {
 		http.disconnect();
 		return lista;
 	}
-	
+
 	public static int postJSON(Proveedores proveedor) throws IOException {
 
 		url = new URL(sitio + "proveedores/guardar");
@@ -77,16 +77,65 @@ public class TestJSONProveedores {
 		http.setRequestProperty("Accept", "application/json");
 		http.setRequestProperty("Content-Type", "application/json");
 		
-		String data = "{" + "\"nitproveedor\":\"" + proveedor.getNitProveedor()
-				+ "\",\"ciudad_proveedor\": \""+ proveedor.getCiudad_proveedor()		
-				+ "\",\"email_usuario\": \"" + proveedor.getNombre_proveedor()
-				+ "\",\"usuario\":\"" + proveedor.getTelefono_proveedor()
-				+ "\",\"direccion_proveedor\":\"" + proveedor.getDireccion_proveedor() + "\"}";
+		String data = "{" + "\"nitproveedor\":\"" + (proveedor.getNitproveedor())
+				+ "\",\"ciudad_proveedor\": \""+ proveedor.getCiudad_proveedor() 		
+				+ "\",\"direccion_proveedor\": \"" + proveedor.getDireccion_proveedor() 
+				+ "\",\"nombre_proveedor\":\"" + proveedor.getNombre_proveedor()
+				+ "\",\"telefono_proveedor\":\"" + proveedor.getTelefono_proveedor() + "\"}";
 		
 		byte[] out = data.getBytes(StandardCharsets.UTF_8);
 		OutputStream stream = http.getOutputStream();
 		stream.write(out);
 
+		int respuesta = http.getResponseCode();
+		http.disconnect();
+		return respuesta;
+	}
+
+	public static int putJSON(Proveedores proveedor, Long id) throws IOException {
+
+		url = new URL(sitio + "proveedores/actualizar");
+		HttpURLConnection http;
+		http = (HttpURLConnection) url.openConnection();
+
+		try {
+			http.setRequestMethod("PUT");
+		} catch (ProtocolException e) {
+			e.printStackTrace();
+		}
+
+		http.setDoOutput(true);
+		http.setRequestProperty("Accept", "application/json");
+		http.setRequestProperty("Content-Type", "application/json");
+
+		String data = "{" + "\"nitproveedor\":\"" + id 				
+				+ "\",\"ciudad_proveedor\": \"" + proveedor.getCiudad_proveedor() 
+				+ "\",\"direccion_proveedor\": \"" + proveedor.getDireccion_proveedor()
+				+ "\",\"nombre_proveedor\":\"" + proveedor.getNombre_proveedor()
+				+ "\",\"telefono_proveedor\":\"" + proveedor.getTelefono_proveedor() + "\"}"; 
+		
+		byte[] out = data.getBytes(StandardCharsets.UTF_8);
+		OutputStream stream = http.getOutputStream();
+		stream.write(out);
+
+		int respuesta = http.getResponseCode();
+		http.disconnect();
+		return respuesta;
+	}
+
+	public static int deleteJSON(Long id) throws IOException {
+
+		url = new URL(sitio + "proveedores/eliminar/" + id);
+		HttpURLConnection http;
+		http = (HttpURLConnection) url.openConnection();
+		try {
+			http.setRequestMethod("DELETE");
+		} catch (ProtocolException e) {
+			e.printStackTrace();
+		}
+		http.setDoOutput(true);
+		http.setRequestProperty("Accept", "application/json");
+		http.setRequestProperty("Content-Type", "application/json");
 		int respuesta = http.getResponseCode();
 		http.disconnect();
 		return respuesta;

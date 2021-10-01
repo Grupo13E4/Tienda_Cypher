@@ -12,8 +12,8 @@ public class Clientes {
 		super();
 	}
 
-	public Clientes(String cedula_cliente, String nombre_cliente, String email_cliente, String direccion_cliente,
-			String telefono_cliente) {
+	public Clientes(String cedula_cliente, String nombre_cliente, String email_cliente, 
+			String direccion_cliente, String telefono_cliente) {
 		super();
 		this.cedula_cliente = cedula_cliente;
 		this.nombre_cliente = nombre_cliente;
