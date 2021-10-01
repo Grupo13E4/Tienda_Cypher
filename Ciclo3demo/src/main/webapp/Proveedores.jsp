@@ -29,32 +29,27 @@
 						<div class="form-group">
 							<input type="hidden" name="menu" value="Proveedores"> 
 							<label>NIT:</label>
-							<input type="text" name="txtnit"  placeholder="Ej. 1234567" class="form-control" 
-							value="${proveedorSeleccionado.getNitproveedor()}">
+							<input type="text" name="txtnit" class="form-control" value="${proveedorSeleccionado.getNitproveedor()}">
 						</div>
 						<div class="form-group">
 							<label>Ciudad:</label> 
-							<input type="text"  placeholder="Ej. Bogotá, Cali" name="txtciudad" class="form-control" 
-							value="${proveedorSeleccionado.getCiudad_proveedor()}">
+							<input type="text" name="txtciudad" class="form-control" value="${proveedorSeleccionado.getCiudad_proveedor()}">
 						</div>
 						<div class="form-group">
 							<label>Dirección:</label> 
-							<input type="text"  placeholder="Ej. carrera 65b 40" name="txtdireccion" class="form-control" 
-							value="${proveedorSeleccionado.getDireccion_proveedor()}">
+							<input type="text" name="txtdireccion" class="form-control" value="${proveedorSeleccionado.getDireccion_proveedor()}">
 						</div>
 						<div class="form-group">
 							<label>Nombre:</label> 
-							<input type="text"  placeholder="Ej. María, Carlos"name="txtnombre" class="form-control" 
-							value="${proveedorSeleccionado.getNombre_proveedor()}">
+							<input type="text" name="txtnombre" class="form-control" value="${proveedorSeleccionado.getNombre_proveedor()}">
 						</div>
 						<div class="form-group">
 							<label>Telefono:</label> 
-							<input type="text" placeholder="Ej. 1234567" name="txttelefono" class="form-control" 
-							value="${proveedorSeleccionado.getTelefono_proveedor()}">
+							<input type="text" name="txttelefono" class="form-control" value="${proveedorSeleccionado.getTelefono_proveedor()}">
 						</div>
 
-						<input type="submit" class="btn btn-primary mt-2" name="accion" value="Agregar"> 
-						<input type="submit" class="btn btn-success mt-2" name="accion" value="Actualizar">
+						<input type="submit" class="btn btn-primary mt-2" style="backgraund-color: #0d6efd" name="accion" value="Agregar"> 
+						<input type="submit" class="btn btn-success mt-2" style="backgraund-color: #198754" name="accion" value="Actualizar">
 					</form>
 				</div>
 			</div>
@@ -90,7 +85,7 @@
 				</tbody>
 			</table>
 		</div>
-	</div>	
+	</div>
+	
 </body>
 </html>
->

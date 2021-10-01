@@ -128,16 +128,20 @@ public class TestJSONProveedores {
 		url = new URL(sitio + "proveedores/eliminar/" + id);
 		HttpURLConnection http;
 		http = (HttpURLConnection) url.openConnection();
+
 		try {
 			http.setRequestMethod("DELETE");
 		} catch (ProtocolException e) {
 			e.printStackTrace();
 		}
+
 		http.setDoOutput(true);
 		http.setRequestProperty("Accept", "application/json");
 		http.setRequestProperty("Content-Type", "application/json");
+
 		int respuesta = http.getResponseCode();
 		http.disconnect();
 		return respuesta;
 	}
+
 }

@@ -4,42 +4,47 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
-@Table(name="proveedores")
+@Entity // Indicado que esta clase comportara como una entidad dentro de la base de datos
+@Table(name = "proveedores")
 public class Proveedores {
-	
-	@Id
-	private long nitProveedor;
+
+	@Id // Indicar a java que el campo que esta debajo es una llave principal (PK)
+	private long nitproveedor;	
 	private String ciudad_proveedor;
+	private String direccion_proveedor;
 	private String nombre_proveedor;
 	private String telefono_proveedor;
-	private String direccion_proveedor;
 	
 	public Proveedores() {
 		super();
 	}
 	
-	public Proveedores(long nitProveedor, String ciudad_proveedor, String nombre_proveedor, String telefono_proveedor,
-			String direccion_proveedor) {
+	public Proveedores(long nitproveedor, String ciudad_proveedor, String direccion_proveedor, String nombre_proveedor, String telefono_proveedor) {
 		super();
-		this.nitProveedor = nitProveedor;
+		this.nitproveedor = nitproveedor;
 		this.ciudad_proveedor = ciudad_proveedor;
+		this.direccion_proveedor = direccion_proveedor;
 		this.nombre_proveedor = nombre_proveedor;
 		this.telefono_proveedor = telefono_proveedor;
-		this.direccion_proveedor = direccion_proveedor;
 	}
-
-	public long getNitProveedor() {
-		return nitProveedor;
+	
+	public long getNitproveedor() {
+		return nitproveedor;
 	}
-	public void setNitProveedor(long nitProveedor) {
-		this.nitProveedor = nitProveedor;
+	public void setNitproveedor(long nitproveedor) {
+		this.nitproveedor = nitproveedor;
 	}
 	public String getCiudad_proveedor() {
 		return ciudad_proveedor;
 	}
 	public void setCiudad_proveedor(String ciudad_proveedor) {
 		this.ciudad_proveedor = ciudad_proveedor;
+	}
+	public String getDireccion_proveedor() {
+		return direccion_proveedor;
+	}
+	public void setDireccion_proveedor(String direccion_proveedor) {
+		this.direccion_proveedor = direccion_proveedor;
 	}
 	public String getNombre_proveedor() {
 		return nombre_proveedor;
@@ -53,12 +58,7 @@ public class Proveedores {
 	public void setTelefono_proveedor(String telefono_proveedor) {
 		this.telefono_proveedor = telefono_proveedor;
 	}
-	public String getDireccion_proveedor() {
-		return direccion_proveedor;
-	}
-	public void setDireccion_proveedor(String direccion_proveedor) {
-		this.direccion_proveedor = direccion_proveedor;
-	}
 	
 	
+
 }
