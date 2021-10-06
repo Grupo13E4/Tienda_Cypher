@@ -1,14 +1,7 @@
-package co.edu.unbosque.ciclo3backGrupo13.model;
+package co.edu.unbosque.ciclo3demo;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name="ventas")
 public class Ventas {
 	
-	@Id	
 	private Long codigo_venta;
 	private Long cedula_cliente;
 	private Long cedula_usuario;
@@ -54,4 +47,5 @@ public class Ventas {
 	}
 	
 	
+		
 }

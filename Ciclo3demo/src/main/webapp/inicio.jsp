@@ -70,11 +70,15 @@
 												$('#password').attr('type', $(this).is(':checked') ? 'text' : 'password');
 											});
 										});
-										</script>										
+										</script>	
+								  	<!-- <div class="alert alert-danger">
+    									<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    									<strong>Ingreso errado!</strong> Verifique su Usuario y Contraseña.
+  									</div>	 -->								
 						
 					<div>
 						<input type="submit" name="accion" value="Ingresar" class="btn btn-primary btn-lm mt-4">
-						<a class="btn btn-primary btn-lm mt-4" href="Home.jsp" role="button">Cancelar</a>
+						<a class="btn btn-primary btn-lm mt-4" href="inicio.jsp" role="button">Cancelar</a>
 					</div>
 				</form>
 			</div>

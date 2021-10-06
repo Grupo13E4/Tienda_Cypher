@@ -44,8 +44,9 @@
 							href="Controlador?menu=Productos&accion=Listar" target="myFrame">Productos</a>
 						</li>
 						<li class="nav-item">
-							<a style="margin-left: 10px; border: none" class="btn btn-outline-light" 
-							href="Controlador?menu=Ventas&accion=Listar" target="myFrame">Ventas</a>
+							<a style="margin-left:10px; border:none" class="btn btn-outline-light" 
+							href="Controlador?menu=Ventas&accion=default&UsuarioActivo=${usuario.getCedula_usuario()}"
+							target="myFrame">Ventas</a>
 						</li>
 						<li class="nav-item">
 							<a
@@ -59,16 +60,18 @@
 			<div class="dropdown">
 				<button class="btn btn-outline-light dropdown-toggle" type="button"
 					id="dropdownMenuButton1" data-bs-toggle="dropdown"
-					aria-expanded="false">Nombre Usuario:
-					${usuario.getNombre_usuario()}</button>
+					aria-expanded="false">Usuario: ${usuario.getNombre_usuario()}
+				</button>
+					
 				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
 					<a class="dropdown-item" href="#"><img src="img/User.png"
-						width="40" alt="40"></a> <a class="dropdown-item" href="#">${usuario.getUsuario()}</a>
+						width="40" alt="40"></a> 						
+					<a class="dropdown-item" href="#">${usuario.getUsuario()}</a>
 					<a class="dropdown-item" href="#">${usuario.getEmail_usuario()}</a>
 					<div class="dropdown-divider"></div>
 					<form class="dropdown-item" method="POST" action="#">
-						<button class="btn btn-danger center-block" type="submit"
-							name="accion" value="Salir">Cerrar Sesion</button>
+						<a class="btn btn-danger center-block" type="submit" 
+							href="inicio.jsp">Cerrar Sesion</a>
 					</form>
 				</div>
 			</div>

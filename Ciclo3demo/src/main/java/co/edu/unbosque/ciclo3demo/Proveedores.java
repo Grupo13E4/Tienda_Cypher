@@ -2,7 +2,7 @@ package co.edu.unbosque.ciclo3demo;
 
 public class Proveedores {
 	
-	private String nitproveedor;	
+	private String Nitproveedor;	
 	private String ciudad_proveedor;
 	private String direccion_proveedor;
 	private String nombre_proveedor;
@@ -13,9 +13,9 @@ public class Proveedores {
 		super();
 	}
 	
-	public Proveedores(String nitproveedor, String ciudad_proveedor, String direccion_proveedor, String nombre_proveedor, String telefono_proveedor) {
+	public Proveedores(String Nitproveedor, String ciudad_proveedor, String direccion_proveedor, String nombre_proveedor, String telefono_proveedor) {
 		super();
-		this.nitproveedor = nitproveedor;
+		this.Nitproveedor = Nitproveedor;
 		this.ciudad_proveedor = ciudad_proveedor;
 		this.direccion_proveedor = direccion_proveedor;
 		this.nombre_proveedor = nombre_proveedor;
@@ -24,11 +24,11 @@ public class Proveedores {
 
 
 	public String getNitproveedor() {
-		return nitproveedor;
+		return Nitproveedor;
 	}
 
 	public void setNitproveedor(String nitproveedor) {
-		this.nitproveedor = nitproveedor;
+		this.Nitproveedor = nitproveedor;
 	}
 
 	public String getCiudad_proveedor() {
