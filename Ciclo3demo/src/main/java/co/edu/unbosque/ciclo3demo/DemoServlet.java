@@ -34,7 +34,7 @@ public class DemoServlet extends HttpServlet {
 		for (Usuarios usuario:lista){
 			if (usuario.getUsuario().equals(usua) && usuario.getPassword().equals(pass)) {
 			    request.setAttribute("usuario", usuario);
-			    request.getRequestDispatcher("/Principal.jsp").forward(request, response);
+			    request.getRequestDispatcher("/Principal.jsp").forward(request, response);			    
 			    respuesta =1;
 			}
 					

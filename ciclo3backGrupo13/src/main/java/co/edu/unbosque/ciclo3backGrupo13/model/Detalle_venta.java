@@ -5,8 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="detalle_venta")
 public class Detalle_venta {
 
 	@Id
@@ -15,10 +17,9 @@ public class Detalle_venta {
 	private Integer cantidad_producto;
 	private Long codigo_producto;
 	private Long codigo_venta;
-	private Long valor_total;
-	private Long valor_venta;
-	private Long valor_iva;
-	
+	private Double valor_total;
+	private Double valor_venta;
+	private Double valor_iva;
 	public Integer getCodigo_detalle_venta() {
 		return codigo_detalle_venta;
 	}
@@ -43,25 +44,23 @@ public class Detalle_venta {
 	public void setCodigo_venta(Long codigo_venta) {
 		this.codigo_venta = codigo_venta;
 	}
-	public Long getValor_total() {
+	public Double getValor_total() {
 		return valor_total;
 	}
-	public void setValor_total(Long valor_total) {
+	public void setValor_total(Double valor_total) {
 		this.valor_total = valor_total;
 	}
-	public Long getValor_venta() {
+	public Double getValor_venta() {
 		return valor_venta;
 	}
-	public void setValor_venta(Long valor_venta) {
+	public void setValor_venta(Double valor_venta) {
 		this.valor_venta = valor_venta;
 	}
-	public Long getValor_iva() {
+	public Double getValor_iva() {
 		return valor_iva;
 	}
-	public void setValor_iva(Long valor_iva) {
+	public void setValor_iva(Double valor_iva) {
 		this.valor_iva = valor_iva;
 	}
-	
-	
 	
 }

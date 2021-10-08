@@ -30,11 +30,20 @@ public class TestJSONDetalleVenta {
 		
 		String data = "{" + "\"codigo_detalle_venta\":\"" + String.valueOf(detalle_venta.getCodigo_detalle_venta())
 				+ "\",\"cantidad_producto\": \""+ String.valueOf(detalle_venta.getCantidad_producto()) 		
-				+ "\",\"codigo_producto\": \"" + detalle_venta.getCodigo_producto()
+				+ "\",\"codigo_producto\": \"" + String.valueOf(detalle_venta.getCodigo_producto())
 				+ "\",\"codigo_venta\":\"" + String.valueOf(detalle_venta.getCodigo_venta())
 				+ "\",\"valor_total\":\"" + String.valueOf(detalle_venta.getValor_total())
 				+ "\",\"valor_venta\":\"" + String.valueOf(detalle_venta.getValor_venta()) 
 				+ "\",\"valor_iva\":\"" + String.valueOf(detalle_venta.getValor_iva())+ "\"}";
+		
+		System.out.println("Código detalle: " + detalle_venta.getCodigo_detalle_venta());
+		System.out.println("Cantidad detalle: " +detalle_venta.getCantidad_producto());
+		System.out.println("Producto detalle: " + detalle_venta.getCodigo_producto());
+		System.out.println("Código Venta: " +detalle_venta.getCodigo_venta());
+		System.out.println("Valor Total: " +detalle_venta.getValor_total());
+		System.out.println("Valor Venta: "+ detalle_venta.getValor_venta());
+		System.out.println("Valor Iva: " +detalle_venta.getValor_iva());
+		
 		
 		byte[] out = data.getBytes(StandardCharsets.UTF_8);
 		OutputStream stream = http.getOutputStream();

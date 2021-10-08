@@ -68,7 +68,10 @@ public class Controlador extends HttpServlet {
 	public void mostrarNumFactura(String numFact, HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 			if(numFact == null) {
-				numFact = "1";
+				
+				
+					numFact = "1";
+				
 				numfac = Integer.parseInt(numFact);
 			}else {
 				numfac = Integer.parseInt(numFact) + 1;
@@ -76,6 +79,39 @@ public class Controlador extends HttpServlet {
 			}
 			request.setAttribute("numerofactura", numfac);
 		}
+	
+	public void grabarDetalle_Ventas (Long numFact, HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+		for(int i = 0; i<listaVentas.size(); i++) {
+			detalle_venta = new Detalle_venta();
+			detalle_venta.setCodigo_detalle_venta(i+1);
+			detalle_venta.setCodigo_venta(numFact);
+			detalle_venta.setCodigo_producto(listaVentas.get(i).getCodigo_producto());
+			detalle_venta.setCantidad_producto(listaVentas.get(i).getCantidad_producto());
+			detalle_venta.setValor_venta(listaVentas.get(i).getValor_venta());
+			detalle_venta.setValor_total(listaVentas.get(i).getValor_total());
+			detalle_venta.setValor_iva(listaVentas.get(i).getValor_iva());
+			
+			int respuesta = 0;
+			
+			try {
+				respuesta = TestJSONDetalleVenta.postJSON(detalle_venta);
+				PrintWriter write = response.getWriter();
+				if(respuesta == 200) {
+					System.out.println("Registro grabado en Detalle Ventas: " + i);
+					request.getRequestDispatcher("Controlador?menu=Ventas&accion=default").forward(request, response);
+				}else {
+					write.println("Error Detalle Ventas: " + respuesta);
+				}
+				write.close();
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+					
+		}
+	}
 	
 	//****************************************************************************
 
@@ -85,13 +121,7 @@ public class Controlador extends HttpServlet {
 
 		String menu = request.getParameter("menu");
 		String accion = request.getParameter("accion");
-		
-		//************Cedula del Usuario Activo *****************
-		String cedula_usuario_activo = request.getParameter("UsuarioActivo");
-		usuarios.setCedula_usuario(cedula_usuario_activo);
-		request.setAttribute("usuarioSeleccionado", usuarios);
-		//*******************************************************
-		
+				
 		switch (menu) {
 		case "Principal":			
 			request.getRequestDispatcher("/Home.jsp").forward(request, response);
@@ -451,6 +481,12 @@ public class Controlador extends HttpServlet {
 			request.getRequestDispatcher("/Productos.jsp").forward(request, response);
 			break;
 		case "Ventas":
+			//************Cedula del Usuario Activo *****************
+			String cedula_usuario_activo = request.getParameter("UsuarioActivo");
+			usuarios.setCedula_usuario(cedula_usuario_activo);
+			request.setAttribute("usuarioSeleccionado", usuarios);
+			//*******************************************************
+			
 			//**********Enviar al formulario de ventas la cédula del usuario y numero de factura**************
 			request.setAttribute("usuarioSeleccionado", usuarios);
 			request.setAttribute("numerofactura", numfac);
@@ -475,6 +511,8 @@ public class Controlador extends HttpServlet {
 				detalle_venta = new Detalle_venta();
 				item++;
 				totalapagar = 0;
+				acusubtotal = 0;
+				subtotaliva = 0;
 				
 				codProducto = Integer.parseInt(request.getParameter("codigoproducto"));
 				descripcion = request.getParameter("nombreproducto");
@@ -531,6 +569,7 @@ public class Controlador extends HttpServlet {
 					
 					if(respuesta == 200) {
 						System.out.println("Grabación Exitosa" + respuesta);
+						this.grabarDetalle_Ventas(ventas.getCodigo_venta(), request, response);
 					}else {
 						write.println("Error Ventas: " + respuesta);
 					}
@@ -540,9 +579,16 @@ public class Controlador extends HttpServlet {
 				}
 				//*************************************************
 				
+				listaVentas.clear();
+				
+				item = 0;
+				totalapagar = 0;
+				acusubtotal = 0;
+				subtotaliva = 0;
+				
 			}else {
 				//********Muestro por primera vez numero de factura****
-				String factura = null;
+				String factura = request.getParameter("numerofactura");
 				this.mostrarNumFactura(factura, request, response);
 			}
 			

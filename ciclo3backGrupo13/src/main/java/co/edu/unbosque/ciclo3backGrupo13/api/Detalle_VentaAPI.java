@@ -10,7 +10,7 @@ import co.edu.unbosque.ciclo3backGrupo13.dao.Detalle_VentaDAO;
 import co.edu.unbosque.ciclo3backGrupo13.model.Detalle_venta;
 
 @RestController
-@RequestMapping("/detalle_venta")
+@RequestMapping("detalle_venta")
 public class Detalle_VentaAPI {
 	
 	@Autowired
