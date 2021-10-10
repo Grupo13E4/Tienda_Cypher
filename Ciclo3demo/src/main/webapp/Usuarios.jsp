@@ -16,6 +16,16 @@
 <link rel="icon" href="img/icon.jpg" type="image/x-icon">
 <title>Creacion de Usuario</title>
 </head>
+	<script type="text/javascript">
+		function Confirmar_borrar() {
+		var respuesta = confirm("¿Estas seguro que deseas eliminar al usuario?");
+			if (respuesta == true){
+				return true;
+			}else{
+				return false;
+				}
+			}
+	</script>
 <body>
 	<div class="row">
 		<div class="ingresar card col-md-3">
@@ -29,28 +39,28 @@
 						<div class="form-group">
 							<input type="hidden" name="menu" value="Usuarios"> 
 							<label>Cedula:</label>
-							<input type="text" name="txtcedula" class="form-control" 
-							value="${usuarioSeleccionado.getCedula_usuario()}" required>
+							<input type="number" name="txtcedula" class="form-control" 
+							value="${usuarioSeleccionado.getCedula_usuario()}" required="required">
 						</div>
 						<div class="form-group">
 							<label>Nombre:</label> 
 							<input type="text" name="txtnombre" class="form-control" 
-							value="${usuarioSeleccionado.getNombre_usuario()}" required>
+							value="${usuarioSeleccionado.getNombre_usuario()}" required="required">
 						</div>
 						<div class="form-group">
 							<label>Email:</label> 
 							<input type="email" name="txtemail" class="form-control" 
-							value="${usuarioSeleccionado.getEmail_usuario()}" required>
+							value="${usuarioSeleccionado.getEmail_usuario()}" required="required">
 						</div>
 						<div class="form-group">
 							<label>Usuario:</label> 
 							<input type="text" name="txtusuario" class="form-control" 
-							value="${usuarioSeleccionado.getUsuario()}" required>
+							value="${usuarioSeleccionado.getUsuario()}" required="required">
 						</div>
 						<div class="form-group">
 							<label>Password:</label> 
 							<input type="password" name="txtpassword" class="form-control" 
-							value="${usuarioSeleccionado.getPassword()}" minlength="3" required>
+							value="${usuarioSeleccionado.getPassword()}" minlength="3" maxlength="20" required="required">
 						</div>
 
 						<input type="submit" class="btn btn-primary mt-2" name="accion" value="Agregar"> 
@@ -83,7 +93,7 @@
 						<td><a class="btn btn-warning m-2"
 							href="Controlador?menu=Usuarios&accion=Cargar&id=<%=usuario.getCedula_usuario()%>">Editar</a>
 							<a class="btn btn-danger m-2"
-							href="Controlador?menu=Usuarios&accion=Eliminar&id=<%=usuario.getCedula_usuario()%>">Eliminar</a>
+							href="Controlador?menu=Usuarios&accion=Eliminar&id=<%=usuario.getCedula_usuario()%>" onclick="return Confirmar_borrar()">Eliminar</a>
 						</td>
 					</tr>
 					<%}%>

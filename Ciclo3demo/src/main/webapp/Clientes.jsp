@@ -16,6 +16,16 @@
 <link rel="icon" href="img/icon.jpg" type="image/x-icon">
 <title>Creacion de Cliente</title>
 </head>
+	<script type="text/javascript">
+		function Confirmar_borrar() {
+		var respuesta = confirm("¿Estas seguro que deseas eliminar al cliente?");
+			if (respuesta == true){
+				return true;
+			}else{
+				return false;
+				}
+			}
+	</script>
 <body>
 	<div class="row">
 		<div class="ingresar card col-md-3">
@@ -29,28 +39,28 @@
 						<div class="form-group">
 							<input type="hidden" name="menu" value="Clientes"> 
 							<label>Cedula:</label>
-							<input type="text" name="txtcedula" class="form-control" 
-							value="${clienteSeleccionado.getCedula_cliente()}">
+							<input type="number" name="txtcedula" class="form-control" 
+							value="${clienteSeleccionado.getCedula_cliente()}" required="required">
 						</div>
 						<div class="form-group">
 							<label>Nombre:</label> 
 							<input type="text" name="txtnombre" class="form-control" 
-							value="${clienteSeleccionado.getNombre_cliente()}">
+							value="${clienteSeleccionado.getNombre_cliente()}" required="required">
 						</div>
 						<div class="form-group">
 							<label>Email:</label> 
-							<input type="text" name="txtemail" class="form-control" 
-							value="${clienteSeleccionado.getEmail_cliente()}">
+							<input type="email" name="txtemail" class="form-control" 
+							value="${clienteSeleccionado.getEmail_cliente()}" required="required">
 						</div>
 						<div class="form-group">
 							<label>Dirección:</label> 
 							<input type="text" name="txtdireccion" class="form-control" 
-							value="${clienteSeleccionado.getDireccion_cliente()}">
+							value="${clienteSeleccionado.getDireccion_cliente()}" required="required">
 						</div>
 						<div class="form-group">
 							<label>Teléfono:</label> 
-							<input type="text" name="txttelefono" class="form-control" 
-							value="${clienteSeleccionado.getTelefono_cliente()}">
+							<input type="number" name="txttelefono" class="form-control" 
+							value="${clienteSeleccionado.getTelefono_cliente()}" required="required">
 						</div>
 
 						<input type="submit" class="btn btn-primary mt-2" name="accion" value="Agregar"> 
@@ -83,7 +93,7 @@
 						<td><a class="btn btn-warning m-2"
 							href="Controlador?menu=Clientes&accion=Cargar&id=<%=cliente.getCedula_cliente()%>">Editar</a>
 							<a class="btn btn-danger m-2"
-							href="Controlador?menu=Clientes&accion=Eliminar&id=<%=cliente.getCedula_cliente()%>">Eliminar</a>
+							href="Controlador?menu=Clientes&accion=Eliminar&id=<%=cliente.getCedula_cliente()%>" onclick="return Confirmar_borrar()">Eliminar </a>
 						</td>
 					</tr>
 					<%}%>

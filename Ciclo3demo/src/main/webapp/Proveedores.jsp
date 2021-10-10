@@ -16,6 +16,16 @@
 <link rel="icon" href="img/icon.jpg" type="image/x-icon">
 <title>Creacion de Proveedor</title>
 </head>
+	<script type="text/javascript">
+		function Confirmar_borrar() {
+		var respuesta = confirm("¿Estas seguro que deseas eliminar al proveedor?");
+			if (respuesta == true){
+				return true;
+			}else{
+				return false;
+				}
+			}
+	</script>
 <body>
 	<div class="row">
 		<div class="ingresar card col-md-4">
@@ -29,23 +39,23 @@
 						<div class="form-group">
 							<input type="hidden" name="menu" value="Proveedores"> 
 							<label>NIT:</label>
-							<input type="text" name="txtnit" class="form-control" value="${proveedorSeleccionado.getNitproveedor()}">
+							<input type="number" name="txtnit" class="form-control" value="${proveedorSeleccionado.getNitproveedor()}" required="required">
 						</div>
 						<div class="form-group">
 							<label>Ciudad:</label> 
-							<input type="text" name="txtciudad" class="form-control" value="${proveedorSeleccionado.getCiudad_proveedor()}">
+							<input type="text" name="txtciudad" class="form-control" value="${proveedorSeleccionado.getCiudad_proveedor()}" required="required">
 						</div>
 						<div class="form-group">
 							<label>Dirección:</label> 
-							<input type="text" name="txtdireccion" class="form-control" value="${proveedorSeleccionado.getDireccion_proveedor()}">
+							<input type="text" name="txtdireccion" class="form-control" value="${proveedorSeleccionado.getDireccion_proveedor()}" required="required">
 						</div>
 						<div class="form-group">
 							<label>Nombre:</label> 
-							<input type="text" name="txtnombre" class="form-control" value="${proveedorSeleccionado.getNombre_proveedor()}">
+							<input type="text" name="txtnombre" class="form-control" value="${proveedorSeleccionado.getNombre_proveedor()}" required="required">
 						</div>
 						<div class="form-group">
 							<label>Telefono:</label> 
-							<input type="text" name="txttelefono" class="form-control" value="${proveedorSeleccionado.getTelefono_proveedor()}">
+							<input type="number" name="txttelefono" class="form-control" value="${proveedorSeleccionado.getTelefono_proveedor()}" required="required">
 						</div>
 
 						<input type="submit" class="btn btn-primary mt-2" style="backgraund-color: #0d6efd" name="accion" value="Agregar"> 
@@ -78,7 +88,7 @@
 						<td><a class="btn btn-warning m-2"
 							href="Controlador?menu=Proveedores&accion=Cargar&id=<%=proveedor.getNitproveedor()%>">Editar</a>
 							<a class="btn btn-danger m-2"
-							href="Controlador?menu=Proveedores&accion=Eliminar&id=<%=proveedor.getNitproveedor()%>">Eliminar</a>
+							href="Controlador?menu=Proveedores&accion=Eliminar&id=<%=proveedor.getNitproveedor()%>" onclick="return Confirmar_borrar()">Eliminar</a>
 						</td>
 					</tr>
 					<%}%>

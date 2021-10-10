@@ -16,6 +16,16 @@
 <link rel="icon" href="img/icon.jpg" type="image/x-icon">
 <title>Creacion de Usuario</title>
 </head>
+<script type="text/javascript">
+		function Confirmar_borrar() {
+		var respuesta = confirm("¿Estas seguro que deseas eliminar al producto?");
+			if (respuesta == true){
+				return true;
+			}else{
+				return false;
+				}
+			}
+	</script>
 <body>
 	<div class="row">
 		<div class="ingresar card col-md-3">
@@ -29,32 +39,32 @@
 						<div class="form-group">
 							<input type="hidden" name="menu" value="Productos"> 
 							<label>Código:</label>
-							<input type="text" name="txtcodigoproducto" class="form-control" 
+							<input type="number" name="txtcodigoproducto" class="form-control" required="required"
 							value="${productoSeleccionado.getCodigo_producto()}">
 						</div>
 						<div class="form-group">
 							<label>Iva Compra:</label> 
-							<input type="text" name="txtivacompra" class="form-control" 
+							<input type="number" name="txtivacompra" class="form-control" required="required" 
 							value="${productoSeleccionado.getIvacompra()}">
 						</div>
 						<div class="form-group">
 							<label>Nit Proveedor:</label> 
-							<input type="text" name="txtnitproveedor" class="form-control" 
+							<input type="number" name="txtnitproveedor" class="form-control" required="required"
 							value="${productoSeleccionado.getNitproveedor()}">
 						</div>
 						<div class="form-group">
 							<label>Nombre Producto:</label> 
-							<input type="text" name="txtnombreproducto" class="form-control" 
+							<input type="text" name="txtnombreproducto" class="form-control" required="required"
 							value="${productoSeleccionado.getNombre_producto()}">
 						</div>
 						<div class="form-group">
 							<label>Precio Compra:</label> 
-							<input type="text" name="txtpreciocompra" class="form-control" 
+							<input type="number" name="txtpreciocompra" class="form-control" required="required"
 							value="${productoSeleccionado.getPrecio_compra()}">
 						</div>
 						<div class="form-group">
 							<label>Precio Venta:</label> 
-							<input type="text" name="txtprecioventa" class="form-control" 
+							<input type="number" name="txtprecioventa" class="form-control" required="required"
 							value="${productoSeleccionado.getPrecio_venta()}">
 						</div>
 
@@ -90,7 +100,7 @@
 						<td><a class="btn btn-warning m-2"
 							href="Controlador?menu=Productos&accion=Cargar&id=<%=producto.getCodigo_producto()%>">Editar</a>
 							<a class="btn btn-danger m-2"
-							href="Controlador?menu=Productos&accion=Eliminar&id=<%=producto.getCodigo_producto()%>">Eliminar</a>
+							href="Controlador?menu=Productos&accion=Eliminar&id=<%=producto.getCodigo_producto()%>" onclick="return Confirmar_borrar()">Eliminar</a>
 						</td>
 					</tr>
 					<%}%>

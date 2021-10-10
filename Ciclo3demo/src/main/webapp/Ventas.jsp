@@ -35,7 +35,7 @@ crossorigin="anonymous">
                         <div class="form-group d-flex">
 							<div class="col-sm-6 d-flex">
 								<input type="number" name="cedulacliente" class="form-control"
-									placeholder="Cedula cliente"
+									placeholder="Cedula cliente" required="required"
 									value="${clienteSeleccionado.getCedula_cliente()}"> 
 									
 									<input type="submit" name="accion" value="BuscarCliente"
