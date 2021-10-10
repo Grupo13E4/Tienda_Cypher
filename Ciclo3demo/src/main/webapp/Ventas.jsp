@@ -11,6 +11,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" 
 rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" 
 crossorigin="anonymous">
+<link rel="stylesheet" href="cssVentas.css">
 <link href="css/smock.min.css" rel="stylesheet">
 <meta charset="ISO-8859-1">
 <title>Ventas</title>
@@ -23,10 +24,10 @@ crossorigin="anonymous">
                 <div class="card">
                     <div class="card-body">
 	                    	<div class="logo mt-4 mb-4">
-	                    		<img src="img/icon.jpg" class="icon" alt="70" width="80"/>
+	                    		<img src="img/icon.jpg" class="icon" alt="100" width="100"/>
 	                    	</div>
                         <div class="form-group">
-	                      <label>Datos Clientes</label>
+	                      <h4 class="card-title" style="color: white;">Datos Clientes</h4>
 	                  </div>
                         <input type="hidden" name="menu" value="Ventas">
                         <input type="hidden" name="UsuarioActivo" 
@@ -34,24 +35,24 @@ crossorigin="anonymous">
                         <div class="form-group d-flex">
 							<div class="col-sm-6 d-flex">
 								<input type="number" name="cedulacliente" class="form-control"
-									placeholder="cedula cliente"
+									placeholder="Cedula cliente"
 									value="${clienteSeleccionado.getCedula_cliente()}"> 
 									
 									<input type="submit" name="accion" value="BuscarCliente"
-									class="btn btn-outline-info">
+									class="btn btn-primary">
 							</div>
 							<div class="col-sm-6">
-								<input type="text" name="nombrecliente" class="form-control"
-									placeholder="Nombre cliente"
-									value="${clienteSeleccionado.getNombre_cliente()}" readonly="readonly">
+								<input type="text" name="nombrecliente" readonly="readonly" 
+									class="form-control" placeholder="Nombre cliente"
+									value="${clienteSeleccionado.getNombre_cliente()}">
 							</div>
 						</div>
                    </div>
                </div>
-               <div class="card">
+               <div class="card mt-2">
                      <div class="card-body">
                          <div class="form-group">
-	                      <label>Datos Productos</label>
+	                      <h4 class="card-title" style="color: white;">Datos Productos</h4>
 	                   </div>
                          <div class="form-group d-flex">
                              <div class="col-sm-6 d-flex">
@@ -59,7 +60,7 @@ crossorigin="anonymous">
                                    placeholder="codigo producto" 
                                    value="${productoSeleccionado.getCodigo_producto()}">
                                  <input type="submit" name="accion" value="BuscarProducto" 
-                                    class="btn btn-outline-info">
+                                    class="btn btn-primary">
 	                      </div>
                             <div class="col-sm-6">
 	                        <input type="text" name="nombreproducto" class="form-control" 
@@ -85,7 +86,7 @@ crossorigin="anonymous">
 	                    </div>
                           <div class="form-group d-flex">
 	                       <input type="submit" name="accion" value="AgregarProducto"
-                                class="btn btn-outline-primary">
+                                class="btn btn-primary">
                           </div>
                    </div>
                 </div>
@@ -95,54 +96,54 @@ crossorigin="anonymous">
                 <div class="card">
                     <div class="card-header">
                         <div class="form-group row">
-                             <label class="col-sm-3 col-form-label">Numero de factura</label>
-                             <input class="form-control col-md-4" type="text" 
+                             <label class="col-sm-4 col-form-label numfac">Número de Factura</label>
+                             <input class="form-control col-md-4 numfac" type="text" 
                                  name="numerofactura" value="${numerofactura}" readonly="readonly">
                        </div>
                     </div>
-                    <div class="card-body">
-                         <table class="table">
-                           <thead class="thead-dark">
-                              <tr>
-                                 <th>#</th>
-                            <th>Codigo</th>
-                            <th>Producto</th>
-                            <th>Precio</th>
-                            <th>Cantidad</th>
-                            <th>Iva</th>
-                            <th>Total</th>
-                        </tr>
-                    </thead>
-                  <tbody>
-                  <c:forEach var="lista" items="${listaventas}">
-                        <tr>
-                            <th>${lista.getCodigo_detalle_venta()}</th>
-                            <td>${lista.getCodigo_producto()}</td>
-                            <td>${lista.getDescripcion_producto()}</td>
-                            <td>${lista.getPrecio_producto()}</td>
-                            <td>${lista.getCantidad_producto()}</td>
-                            <td>${lista.getValor_iva()}</td>
-                            <td>${lista.getValor_venta()}</td>
-                          
-                        </tr>
-                   </c:forEach>
-                   </tbody>
-                </table>
-            </div>
-            <div class="card-footer d-flex">
+				<div class="card-body">
+					<table class="table">
+						<thead class="thead-dark">
+							<tr>
+								<th>#</th>
+								<th>Codigo</th>
+								<th>Producto</th>
+								<th>Precio</th>
+								<th>Cantidad</th>
+								<th>Iva</th>
+								<th>Total</th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach var="lista" items="${listaventas}">
+								<tr>
+									<th>${lista.getCodigo_detalle_venta()}</th>
+									<td>${lista.getCodigo_producto()}</td>
+									<td>${lista.getDescripcion_producto()}</td>
+									<td>${lista.getPrecio_producto()}</td>
+									<td>${lista.getCantidad_producto()}</td>
+									<td>${lista.getValor_iva()}</td>
+									<td>${lista.getValor_venta()}</td>
+
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+				</div>
+				<div class="card-footer d-flex">
                         <div class="col-md-4">
-                            <label>Subtotal</label><br>
-                            <label>Iva</label><br>
-                            <label>Total a pagar</label>
+                            <label class="mt-3">Subtotal</label><br>
+                            <label class="mt-3">Iva</label><br>
+                            <label class="mt-3">Total a pagar</label>
                         </div>
-	                        <div class="col-md-4">    
-	                            <input type=text" name="txtsubtotal" class="form-control" 
+	                        <div class="col-md-4 totales">    
+	                            <input type="text" name="txtsubtotal" class="form-control text-right" 
 	                                placeholder="$ 00.000.00" disabled="disabled" 
 	                                value="${totalsubtotal}">
-	                            <input type=text" name="txttotaliva" class="form-control" 
+	                            <input type="text" name="txttotaliva" class="form-control" 
 	                                placeholder="$ 00.000.00" disabled="disabled" 
 	                                value="${totaliva}">
-	                            <input type=text" name="txttotalapagar" class="form-control" 
+	                            <input type="text" name="txttotalapagar" class="form-control" 
 	                                placeholder="$ 00.000.00" disabled="disabled"
 	                                value="${totalapagar}">
 	                         </div>
