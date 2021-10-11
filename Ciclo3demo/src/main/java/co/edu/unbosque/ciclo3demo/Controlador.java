@@ -594,9 +594,50 @@ public class Controlador extends HttpServlet {
 			
 			request.getRequestDispatcher("/Ventas.jsp").forward(request, response);
 			break;
+		case "Reportes":
+			int opcion = 0;
+			if(accion.equals("ReporteUsuarios")) {
+				try {
+					ArrayList<Usuarios> lista = TestJSON.getJSON();
+					opcion=1;
+					request.setAttribute("listaUsuarios", lista);
+					request.setAttribute("opcion", opcion);
+					
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				
+			} else if (accion.equals("ReporteClientes")) {
+				try {
+					ArrayList<Clientes> lista = TestJSONClientes.getJSON();
+					opcion=2;
+					request.setAttribute("listaClientes", lista);
+					request.setAttribute("opcion", opcion);
+					
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			} else if (accion.equals("ReporteVentas")) {
+				try {
+					ArrayList<Ventas> lista = TestJSONVentas.getJSON();
+					opcion=3;
+					request.setAttribute("listaVentas", lista);
+					request.setAttribute("opcion", opcion);
+					
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			request.getRequestDispatcher("/Reportes.jsp").forward(request, response);
+			break;
 		}
 	}
 }
+
+
+
+
+
 
 
 

@@ -24,33 +24,7 @@ body {
 	border: solid 1px rgba(255, 255, 255, 0.5);
 	color: white;
 }
-img {
-	border-radius: 50px;	
-}
-
-label{
-	font-size: 20px;
-}
 
 tr {
 	color: white;
 }
-
-input {
-	margin-top: 10px;
-	margin-left: 5px;
-}
-
-.numfac {
-	font-size: 20px;
-	margin-right: 10px;
-}
-
-.form-control:focus {
-	color: white !important;
-}
-
-
-
-
-

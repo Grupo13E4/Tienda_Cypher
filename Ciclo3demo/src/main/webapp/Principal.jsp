@@ -49,9 +49,8 @@
 							target="myFrame">Ventas</a>
 						</li>
 						<li class="nav-item">
-							<a
-							style="margin-left: 10px; border: none"
-							class="btn btn-outline-light" href="Controlador?menu=Reportes"
+							<a style="margin-left: 10px; border: none" class="btn btn-outline-light" 
+							href="Controlador?menu=Reportes&accion=default"
 							target="myFrame">Reportes</a>
 						</li>
 					</ul>
