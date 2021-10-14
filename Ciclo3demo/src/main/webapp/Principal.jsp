@@ -82,7 +82,7 @@
 	<div class="m-4" style="height: 900px;">
 	
 			<iframe style="height: 100%; width: 100%; border: none"
-				name="myFrame">					
+				name="myFrame" src="Home.jsp">					
    	        			
 			</iframe>
 	

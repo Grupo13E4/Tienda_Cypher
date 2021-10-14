@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.*;
+import java.util.Optional;
+
+import co.edu.unbosque.ciclo3backGrupo13.DTO.serieFactura;
 import co.edu.unbosque.ciclo3backGrupo13.dao.VentasDAO;
 import co.edu.unbosque.ciclo3backGrupo13.model.Ventas;
 
@@ -26,4 +29,14 @@ public class VentasAPI {
     public List<Ventas> listar(){
     return ventasDAO.findAll();
     }
+	
+	@GetMapping("/sigCod")
+	public Optional<serieFactura> buscarNextId() {
+		return ventasDAO.obtenerConsecutivo();
+	}
+	
+	//@GetMapping("/sigCod")
+	//public Long numerofactura() {
+		//return ventasDAO.getMaxCodigoVenta();
+	//}
 }
